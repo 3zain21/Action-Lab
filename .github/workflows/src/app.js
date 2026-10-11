@@ -1,0 +1,15 @@
+function printAfternoonGreeting() {
+  const now = new Date();
+  const time = now.getHours() ;
+  const afternoonStart = 13 ;
+  const afternoonEnd = 21 ;
+
+  if (time > afternoonStart && time < afternoonEnd) {
+    console.log("Good  Afternoon!!");
+  }
+  else {
+    console.log("It's not afternoon yet.");
+  }
+}
+
+printAfternoonGreeting();
