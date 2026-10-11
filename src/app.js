@@ -1,7 +1,7 @@
 function printAfternoonGreeting() {
   const now = new Date();
   const time = now.getHours() ;
-  const afternoonStart = 13 ;
+  const afternoonStart = 10 ;
   const afternoonEnd = 17 ;
 
   if (time > afternoonStart && time < afternoonEnd) {
