@@ -1,0 +1,12 @@
+name: manual workFlow
+on:
+  workflow_dispatch:
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: manual deployment
+        run: |
+            echo "Manual deployment triggered"    
+            
