@@ -17,4 +17,4 @@ jobs:
     steps:
       - name: manual deployment
         run: |
-            echo "Manual deployment triggered"
+            echo "Manual deployment triggered to ${{ inputs.environment }} environment"
