@@ -16,5 +16,15 @@ jobs:
           entrypoint: /bin/sh
           args: -c "echo 'Running inside Docker container'; cat /etc/os-release"
     
-      - name: back to ubuntu-latest
-        run: cat /etc/os-release
+  dockerized-job:
+    runs-on: ubuntu-latest
+    container:
+        image: ghcr.io/my-org/my-docker-image:latest
+        credentials:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+    steps:
+        - name: Run inside Docker container
+          run: |
+            echo "Running inside the specified Docker container"
+            cat /etc/os-release
