@@ -1,0 +1,20 @@
+name: actions workflow test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run on ubuntu-latest
+        run: cat /etc/os-release
+      
+      - name: Run on Docker container
+        uses: docker://alpine:latest
+        with:
+          entrypoint: /bin/sh
+          args: -c "echo 'Running inside Docker container'; cat /etc/os-release"
+    
+      - name: back to ubuntu-latest
+        run: cat /etc/os-release
