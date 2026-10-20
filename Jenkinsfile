@@ -4,12 +4,12 @@ pipeline{
   stages{
     stage("build-stage"){
       steps{
-        cat /etc/os-release
+        echo 'cat /etc/os-release'
       }
     }
     stage("test-stage"){
       steps{
-        export -p
+        echo 'export -p'
       }
     }
     stage("deploy-stage"){
