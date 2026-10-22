@@ -19,12 +19,7 @@ jobs:
   dockerized-job:
     runs-on: ubuntu-latest
     container:
-        image: ghcr.io/my-org/my-docker-image:latest
-        credentials:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+      image: node:22-alpine
     steps:
-        - name: Run inside Docker container
-          run: |
-            echo "Running inside the specified Docker container"
-            cat /etc/os-release
+      - name: Run inside Docker container
+        run: cat /etc/os-release
