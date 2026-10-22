@@ -1,7 +1,7 @@
 name: manual repository workflow
 on:
   repository_dispatch:
-    types: [incedent_report]
+    types: [incident_report]
 
 jobs:
   handle_incident_report:
